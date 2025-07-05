@@ -78,11 +78,11 @@ const MultiLangDistrictSearch: React.FC<Props> = ({ mapRef }) => {
         }
     };
     return (
-        <div className='absolute top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white p-3 rounded shadow w-72'>
-            <div className='flex gap-2'>
+        <div className='absolute top-4 left-1/2 bg-white transform -translate-x-1/2 w-60 sm:w-72 z-10'>
+            <div className='flex gap-2 items-center'>
                 <input
                     type='text'
-                    className='w-full p-2 border rounded'
+                    className='w-full px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 bg-transparent'
                     placeholder={
                         placeholderByLang[language] || 'Search district...'
                     }
@@ -90,14 +90,14 @@ const MultiLangDistrictSearch: React.FC<Props> = ({ mapRef }) => {
                     onChange={(e) => setQuery(e.target.value)}
                 />
                 <button
-                    className='px-3 bg-blue-600 text-white rounded'
+                    className='px-2 py-1 text-sm bg-blue-600 text-white rounded-md'
                     onClick={handleSearch}
                 >
                     🔍
                 </button>
             </div>
             {matches.length > 0 && (
-                <ul className='mt-2 border rounded max-h-40 overflow-y-auto text-sm'>
+                <ul className='mt-2 border rounded max-h-40 overflow-y-auto text-sm bg-white shadow'>
                     {matches.map((d, idx) => (
                         <li
                             key={idx}

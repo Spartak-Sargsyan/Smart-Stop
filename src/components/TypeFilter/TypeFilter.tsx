@@ -9,7 +9,7 @@ interface Props {
 }
 
 const TypeFilter = ({ lang, selectedType, setSelectedType }: Props) => (
-    <div className='absolute top-4 right-4 z-50 bg-white p-2 rounded-lg shadow-md w-[14rem] '>
+    <div className='absolute top-4 right-4 z-[999] bg-white p-2 rounded-lg shadow-md w-[14rem] '>
         <div className='flex flex-col gap-1'>
             {allTypes.map((type) => {
                 const icon = getIconByType(type as PlaceType);
