@@ -753,4 +753,157 @@ export const locations = [
         },
         link: '/hotel',
     },
+
+    // district
+
+    {
+        id: getNextId(),
+        coords: [40.783, 43.838],
+        translations: {
+            en: {
+                name: 'Slabotka',
+                type: 'District',
+            },
+            ru: { name: 'Слаботка', type: 'Округ' },
+            hy: { name: 'Սլաբոտկա', type: 'Շրջան' },
+        },
+        radius: 400,
+        aliases: ['Slabotka', 'Zinkom', 'Gorku sad', 'Tiv 1'],
+    },
+    {
+        id: getNextId(),
+        coords: [40.82812287517214, 43.8274986791312],
+        translations: {
+            en: {
+                name: '58 District',
+                type: 'District',
+            },
+            ru: { name: 'Округ 58', type: 'Округ' },
+            hy: { name: '58 շրջան', type: 'Շրջան' },
+        },
+        radius: 700,
+        aliases: [
+            '58',
+            'ani taxamas',
+            'paruyr sevak',
+            'mangavarjakan',
+            'institut',
+        ],
+    },
+
+    //bank
+    {
+        id: getNextId(),
+        coords: [40.788866258087666, 43.84567754123136],
+        translations: {
+            en: {
+                name: 'Evocabank',
+                type: 'Bank',
+            },
+            ru: {
+                name: 'Evocabank',
+                type: 'Bank',
+            },
+            hy: {
+                name: 'Evocabank',
+                type: 'Bank',
+            },
+        },
+        link: 'https://www.evoca.am/hy/',
+    },
+    {
+        id: getNextId(),
+        coords: [40.7929125089636, 43.84281594607066],
+        translations: {
+            en: {
+                name: 'Inecobank',
+                type: 'Bank',
+            },
+            ru: {
+                name: 'Inecobank',
+                type: 'Bank',
+            },
+            hy: {
+                name: 'Inecobank',
+                type: 'Bank',
+            },
+        },
+        link: 'https://www.inecobank.am/hy/Individual',
+    },
+    {
+        id: getNextId(),
+        coords: [40.791878813586905, 43.846927785509656],
+        translations: {
+            en: {
+                name: 'IDBank',
+                type: 'Bank',
+            },
+            ru: {
+                name: 'IDBank',
+                type: 'Bank',
+            },
+            hy: {
+                name: 'IDBank',
+                type: 'Bank',
+            },
+        },
+        link: 'https://idbank.am/?srsltid=AfmBOor8CpZpWKZROCmLLLo7Ic6U_AQQHzno3X14IjFgA7iyo2aw7-XI',
+    },
+    {
+        id: getNextId(),
+        coords: [40.79812647467069, 43.83543690641665],
+        translations: {
+            en: {
+                name: 'Araratbank',
+                type: 'Bank',
+            },
+            ru: {
+                name: 'Araratbank',
+                type: 'Bank',
+            },
+            hy: {
+                name: 'Araratbank',
+                type: 'Bank',
+            },
+        },
+        link: 'https://www.araratbank.am/hy/',
+    },
+    {
+        id: getNextId(),
+        coords: [40.78420616808287, 43.84247498790664],
+        translations: {
+            en: {
+                name: 'Araratbank',
+                type: 'Bank',
+            },
+            ru: {
+                name: 'Araratbank',
+                type: 'Bank',
+            },
+            hy: {
+                name: 'Araratbank',
+                type: 'Bank',
+            },
+        },
+        link: 'https://www.araratbank.am/hy/',
+    },
+    {
+        id: getNextId(),
+        coords: [40.793349087084295, 43.84463163671025],
+        translations: {
+            en: {
+                name: 'Unibank',
+                type: 'Bank',
+            },
+            ru: {
+                name: 'Unibank',
+                type: 'Bank',
+            },
+            hy: {
+                name: 'Unibank',
+                type: 'Bank',
+            },
+        },
+        link: 'https://www.unibank.am/hy/',
+    },
 ];

@@ -50,7 +50,9 @@ type PlaceType =
     | 'Library'
     | 'Theatre'
     | 'Cafe'
-    | 'Hotel';
+    | 'Hotel'
+    | 'District'
+    | 'Bank';
 
 type Lang = 'en' | 'ru' | 'hy';
 

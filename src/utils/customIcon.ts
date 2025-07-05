@@ -2,16 +2,18 @@
 import type { PlaceType } from '../models/models';
 
 const iconPaths: Record<string, string> = {
-    Museum: 'museum.png',
-    Cafe: 'cafe.png',
-    Hospital: 'hospital.png',
-    Church: 'church.png',
-    Police: 'police.png',
-    Airport: 'airport.png',
-    Park: 'park.png',
-    Library: 'library.png',
-    Theatre: 'theatre.png',
-    Hotel: 'hotel.png',
+    Museum: '/icons/museum.png',
+    Cafe: '/icons/cafe.png',
+    Hospital: '/icons/hospital.png',
+    Church: '/icons/church.png',
+    Police: '/icons/police.png',
+    Airport: '/icons/airport.png',
+    Park: '/icons/park.png',
+    Library: '/icons/library.png',
+    Theatre: '/icons/theatre.png',
+    Hotel: '/icons/hotel.png',
+    District: '/icons/district.png',
+    Bank: '/icons/bank.png',
 };
 
 export const getIconByType = (type: PlaceType): string | null => {

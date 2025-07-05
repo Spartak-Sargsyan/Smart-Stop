@@ -8,7 +8,7 @@ import {
     type IMultiLangDistrict,
 } from '../../data/district';
 import { useLanguage } from '../../context/LanguageContext';
-
+import { selectDistrict } from '../../utils/selectDistrict';
 const placeholderByLang: Record<string, string> = {
     en: 'Search district...',
     ru: 'Поиск округа...',
@@ -45,66 +45,7 @@ const MultiLangDistrictSearch: React.FC<Props> = ({ mapRef }) => {
                 d.aliases.some((alias) => alias.toLowerCase().startsWith(q))
         );
         setMatches(filtered);
-    }, [query, language]);
-
-    const createCircle = (
-        [lng, lat]: [number, number],
-        radius = 300,
-        points = 64
-    ) => {
-        const coords = [];
-        const km = radius / 1000;
-        const distanceX = km / (111.32 * Math.cos((lat * Math.PI) / 180));
-        const distanceY = km / 110.574;
-
-        for (let i = 0; i < points; i++) {
-            const theta = (i / points) * (2 * Math.PI);
-            const x = distanceX * Math.cos(theta);
-            const y = distanceY * Math.sin(theta);
-            coords.push([lng + x, lat + y]);
-        }
-        coords.push(coords[0]);
-
-        return {
-            type: 'Feature',
-            geometry: {
-                type: 'Polygon',
-                coordinates: [coords],
-            },
-        };
-    };
-
-    const selectDistrict = (district: District) => {
-        console.log('✅ District selected:', district.name);
-        if (!mapRef.current) return;
-
-        const center: [number, number] = [district.lng, district.lat];
-        const circle = createCircle(center, district.radius);
-
-        if (mapRef.current.getLayer('district'))
-            mapRef.current.removeLayer('district');
-        if (mapRef.current.getSource('district'))
-            mapRef.current.removeSource('district');
-
-        mapRef.current.addSource('district', {
-            type: 'geojson',
-            data: circle,
-        });
-
-        mapRef.current.addLayer({
-            id: 'district',
-            type: 'fill',
-            source: 'district',
-            paint: {
-                'fill-color': '#0080ff',
-                'fill-opacity': 0.3,
-            },
-        });
-        console.log('✈️ Flying to:', center);
-        mapRef.current.flyTo({ center, zoom: 16 });
-        setQuery(district.name);
-        setMatches([]);
-    };
+    }, [query, language, allDistricts]);
 
     const highlightMatch = (text: string, query: string) => {
         const index = text.toLowerCase().indexOf(query.toLowerCase());
@@ -131,7 +72,7 @@ const MultiLangDistrictSearch: React.FC<Props> = ({ mapRef }) => {
         console.log('✅ Match found:', found);
 
         if (found) {
-            selectDistrict(found);
+            selectDistrict(found, mapRef.current!);
         } else {
             alert('Округ не найден'); // можно кастомизировать
         }
@@ -161,7 +102,7 @@ const MultiLangDistrictSearch: React.FC<Props> = ({ mapRef }) => {
                         <li
                             key={idx}
                             className='p-1 cursor-pointer hover:bg-gray-100'
-                            onClick={() => selectDistrict(d)}
+                            onClick={() => selectDistrict(d, mapRef.current!)}
                         >
                             {highlightMatch(d.name, query)}
                         </li>

@@ -15,6 +15,8 @@ export const allTypes: PlaceType[] = [
     'Theatre',
     'Cafe',
     'Hotel',
+    'District',
+    'Bank',
 ];
 
 export const translations: IMenu = {
@@ -33,6 +35,8 @@ export const translations: IMenu = {
         Theatre: 'Theatre',
         Cafe: 'Cafe',
         Hotel: 'Hotel',
+        District: 'District',
+        Bank: 'Bank',
     },
     ru: {
         more: 'Подробнее',
@@ -49,6 +53,8 @@ export const translations: IMenu = {
         Theatre: 'Театр',
         Cafe: 'Кафе',
         Hotel: 'Отель',
+        District: 'Округ',
+        Bank: 'Банк',
     },
     hy: {
         more: 'Մանրամասներ',
@@ -65,5 +71,7 @@ export const translations: IMenu = {
         Theatre: 'Թատրոն',
         Cafe: 'Սրճարան',
         Hotel: 'Հյուրանոց',
+        District: 'Թաղամաս',
+        Bank: 'Բանկ',
     },
 };
