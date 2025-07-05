@@ -3,13 +3,14 @@
 // src/utils/selectDistrict.ts
 import maplibregl from 'maplibre-gl';
 import type { District } from '../data/district';
+import type { Feature, Polygon, GeoJsonProperties } from 'geojson';
 
 export const createCircle = (
     [lng, lat]: [number, number],
     radius = 300,
     points = 64
-) => {
-    const coords = [];
+): Feature<Polygon, GeoJsonProperties> => {
+    const coords: [number, number][] = [];
     const km = radius / 1000;
     const distanceX = km / (111.32 * Math.cos((lat * Math.PI) / 180));
     const distanceY = km / 110.574;
@@ -28,6 +29,7 @@ export const createCircle = (
             type: 'Polygon',
             coordinates: [coords],
         },
+        properties: {},
     };
 };
 

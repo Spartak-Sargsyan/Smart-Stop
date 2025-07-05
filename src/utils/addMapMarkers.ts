@@ -56,7 +56,7 @@ export const addMapMarkers = (
                 .setPopup(popup)
                 .addTo(map);
 
-            if (icon === 'district.png') {
+            if (type.toLocaleLowerCase() === 'district') {
                 const foundDistrict = gyumriDistricts[language].find(
                     (d) =>
                         d.name === name ||
